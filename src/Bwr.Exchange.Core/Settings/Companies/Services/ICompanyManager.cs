@@ -18,5 +18,6 @@ namespace Bwr.Exchange.Settings.Companies.Services
         bool CheckIfNameAlreadyExist(string name ,int branchId);
         bool CheckIfNameAlreadyExist(int id, string name, int branchId);
         Task<IList<Company>> GetAllForCurrentBranchAsync(int branchId);
+        string GetCompanyNameById(int id);
     }
 }

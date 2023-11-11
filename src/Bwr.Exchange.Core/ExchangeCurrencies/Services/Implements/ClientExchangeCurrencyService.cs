@@ -81,7 +81,7 @@ namespace Bwr.Exchange.ExchangeCurrencies.Services.Implements
                     Commission = 0.0,
                     InstrumentNo = null,
                     ClientCommission = 0.0,
-                    Note = "عن مبلغ " + result.AmoutOfSecondCurrency + secondCurrencyName,
+                    Note = " عن مبلغ " + string.Format("{0:n}", result.AmoutOfSecondCurrency) + " " + secondCurrencyName,
                     Beneficiary = "",
                     Sender = "",
                     Destination = ""
@@ -100,7 +100,7 @@ namespace Bwr.Exchange.ExchangeCurrencies.Services.Implements
                     Commission = 0.0,
                     InstrumentNo = null,
                     ClientCommission = 0.0,
-                    Note = "عن مبلغ " + result.AmountOfFirstCurrency + firstCurrencyName,
+                    Note = " عن مبلغ " + string.Format("{0:n}", result.AmountOfFirstCurrency) + " " + firstCurrencyName,
                     Beneficiary = "",
                     Sender = "",
                     Destination = ""
@@ -118,7 +118,7 @@ namespace Bwr.Exchange.ExchangeCurrencies.Services.Implements
                        TreasuryId = treasury?.Id,
                        TransactionId = result.Id,
                        TransactionType = CashFlows.TransactionType.Exchange,
-                       Note = "عن مبلغ " + result.AmoutOfSecondCurrency + secondCurrencyName,
+                       Note = " عن مبلغ " + string.Format("{0:n}", result.AmoutOfSecondCurrency) + " " + secondCurrencyName,
                        Type = type,
                        Amount = (-1) * result.PaidAmountOfFirstCurrency
                    });
@@ -134,7 +134,7 @@ namespace Bwr.Exchange.ExchangeCurrencies.Services.Implements
                        TreasuryId = treasury?.Id,
                        TransactionId = result.Id,
                        TransactionType = CashFlows.TransactionType.Exchange,
-                       Note = "عن مبلغ " + result.AmountOfFirstCurrency + firstCurrencyName,
+                       Note = " عن مبلغ " + string.Format("{0:n}", result.AmountOfFirstCurrency) + firstCurrencyName,
                        Type = type,
                        Amount = (-1) * result.PaidAmountOfSecondCurrency
                    });
@@ -149,7 +149,7 @@ namespace Bwr.Exchange.ExchangeCurrencies.Services.Implements
                        TreasuryId = treasury?.Id,
                        TransactionId = result.Id,
                        TransactionType = CashFlows.TransactionType.Exchange,
-                       Note = "عن مبلغ " + result.AmoutOfSecondCurrency + secondCurrencyName,
+                       Note = " عن مبلغ " + string.Format("{0:n}", result.AmoutOfSecondCurrency) + " " + secondCurrencyName,
                        Type = type,
                        Amount = result.ReceivedAmountOfFirstCurrency
                    });
@@ -164,7 +164,7 @@ namespace Bwr.Exchange.ExchangeCurrencies.Services.Implements
                        TreasuryId = treasury?.Id,
                        TransactionId = result.Id,
                        TransactionType = CashFlows.TransactionType.Exchange,
-                       Note = "عن مبلغ " + result.AmountOfFirstCurrency + firstCurrencyName,
+                       Note = " عن مبلغ " + string.Format("{0:n}", result.AmountOfFirstCurrency) + " " + firstCurrencyName,
                        Type = type,
                        Amount = result.ReceivedAmountOfSecondCurrency
                    });
@@ -213,7 +213,7 @@ namespace Bwr.Exchange.ExchangeCurrencies.Services.Implements
                     Commission = 0.0,
                     InstrumentNo = null,
                     ClientCommission = 0.0,
-                    Note = "عن مبلغ " + result.AmoutOfSecondCurrency + secondCurrencyName,
+                    Note = " عن مبلغ " + string.Format("{0:n}", result.AmoutOfSecondCurrency) + " " + secondCurrencyName,
                     Beneficiary = "",
                     Sender = "",
                     Destination = ""
@@ -232,7 +232,7 @@ namespace Bwr.Exchange.ExchangeCurrencies.Services.Implements
                     Commission = 0.0,
                     InstrumentNo = null,
                     ClientCommission = 0.0,
-                    Note = "عن مبلغ " + result.AmountOfFirstCurrency + firstCurrencyName,
+                    Note = " عن مبلغ " + string.Format("{0:n}", result.AmountOfFirstCurrency) + " " + firstCurrencyName,
                     Beneficiary = "",
                     Sender = "",
                     Destination = ""
@@ -250,7 +250,7 @@ namespace Bwr.Exchange.ExchangeCurrencies.Services.Implements
                        TreasuryId = treasury?.Id,
                        TransactionId = result.Id,
                        TransactionType = CashFlows.TransactionType.Exchange,
-                       Note = "عن مبلغ " + result.AmoutOfSecondCurrency + secondCurrencyName,
+                       Note = " عن مبلغ " + string.Format("{0:n}", result.AmoutOfSecondCurrency) + " " + secondCurrencyName,
                        Type = type,
                        Amount = (-1) * result.PaidAmountOfFirstCurrency
                    });
@@ -265,7 +265,7 @@ namespace Bwr.Exchange.ExchangeCurrencies.Services.Implements
                        TreasuryId = treasury?.Id,
                        TransactionId = result.Id,
                        TransactionType = CashFlows.TransactionType.Exchange,
-                       Note = "عن مبلغ " + result.AmountOfFirstCurrency + firstCurrencyName,
+                       Note = " عن مبلغ " + string.Format("{0:n}", result.AmountOfFirstCurrency) + " " + firstCurrencyName,
                        Type = type,
                        Amount = result.ReceivedAmountOfSecondCurrency
                    });

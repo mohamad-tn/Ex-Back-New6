@@ -202,17 +202,17 @@ namespace Bwr.Exchange.TreasuryActions.Services
                 }
                 else if (mainAccount == 4)
                 {
-                    var beneficiaryId = dic["BeneficiaryId"] != null ? int.Parse(dic["BeneficiaryId"].ToString()) : 0;
-                    if (beneficiaryId == -1)
-                    {
-                        treasuryActions = treasuryActions
-                        .Where(x => x.IncomeTransferDetailId != null);
-                    }
-                    else
-                    {
-                        treasuryActions = treasuryActions
-                        .Where(x => x.IncomeTransferDetailId != null && x.IncomeTransferDetail.BeneficiaryId == beneficiaryId);
-                    }
+                    //var beneficiaryId = dic["BeneficiaryId"] != null ? int.Parse(dic["BeneficiaryId"].ToString()) : 0;
+                    //if (beneficiaryId == -1)
+                    //{
+                    //    treasuryActions = treasuryActions
+                    //    .Where(x => x.IncomeTransferDetailId != null);
+                    //}
+                    //else
+                    //{
+                    //    treasuryActions = treasuryActions
+                    //    .Where(x => x.IncomeTransferDetailId != null && x.IncomeTransferDetail.BeneficiaryId == beneficiaryId);
+                    //}
                 }
             }
 

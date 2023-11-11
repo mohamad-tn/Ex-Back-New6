@@ -16,5 +16,6 @@ namespace Bwr.Exchange.Settings.Currencies.Services
         Task DeleteAsync(int id);
         bool CheckIfNameAlreadyExist(string name, int branchId);
         bool CheckIfNameAlreadyExist(int id, string name, int branchId);
+        string GetCurrencyNameById(int id);
     }
 }

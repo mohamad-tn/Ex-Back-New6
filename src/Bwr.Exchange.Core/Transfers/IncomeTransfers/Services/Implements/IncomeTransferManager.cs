@@ -128,15 +128,24 @@ namespace Bwr.Exchange.Transfers.IncomeTransfers.Services.Implements
 
         public IQueryable<IncomeTransfer> Get(DateTime fromDate, DateTime toDate, int? companyId, int? number)
         {
-            if(number == null)
+            if (number == null && companyId != null)
             {
                 return _incomeTransferRepository.GetAllIncluding(c => c.Company, i => i.IncomeTransferDetails)
                 .Where(x => x.Date >= fromDate && x.Date <= toDate && x.CompanyId == companyId);
             }
-            else
+            else if (number == null && companyId == null)
+            {
+                return _incomeTransferRepository.GetAllIncluding(c => c.Company, i => i.IncomeTransferDetails)
+               .Where(x => x.Date >= fromDate && x.Date <= toDate);
+            }
+            else if (number != null)
             {
                 return _incomeTransferRepository.GetAllIncluding(c => c.Company, i => i.IncomeTransferDetails)
                 .Where(x => x.Number == number);
+            }
+            else
+            {
+                return _incomeTransferRepository.GetAllIncluding(c => c.Company, i => i.IncomeTransferDetails);
             }
         }
 

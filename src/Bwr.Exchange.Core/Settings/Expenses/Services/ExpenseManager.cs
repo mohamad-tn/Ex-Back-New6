@@ -65,6 +65,12 @@ namespace Bwr.Exchange.Settings.Expenses.Services
             return await _expenseRepository.UpdateAsync(expense);
         }
 
+        public string GetExpenseNameById(int id)
+        {
+            var expense = _expenseRepository.Get(id);
+            return expense.Name;
+        }
+
 
     }
 }

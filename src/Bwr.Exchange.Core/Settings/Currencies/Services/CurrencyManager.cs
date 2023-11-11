@@ -109,5 +109,11 @@ namespace Bwr.Exchange.Settings.Currencies.Services
             var currencies = await _currencyRepository.GetAllListAsync();
             return currencies.Where(x => x.BranchId == branchId).ToList();
         }
+
+        public string GetCurrencyNameById(int id)
+        {
+            var currency = _currencyRepository.Get(id);
+            return currency.Name;
+        }
     }
 }

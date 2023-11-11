@@ -141,6 +141,12 @@ namespace Bwr.Exchange.Settings.Clients.Services
             return _clientBalanceRepository.GetAllIncluding(x => x.Currency).ToList();
         }
 
+        public string GetClientNameById(int id)
+        {
+            var client = _clientRepository.Get(id);
+            return client.Name;
+        }
+
         #region Helper Methods
         private async Task RemoveClientPhones(int clientId, IList<ClientPhone> newClientPhones)
         {

@@ -8,6 +8,7 @@ namespace Bwr.Exchange.Settings.ExchangePrices
     public interface IExchangePriceAppService: IApplicationService
     {
         Task<ExchangePriceDto> UpdateAsync(UpdateExchangePriceDto input);
+        Task<ExchangePriceDto> GetById(int id);
         Task<IList<ExchangePriceDto>> GetAllAsync();
     }
 }

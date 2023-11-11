@@ -349,7 +349,17 @@
     <text name="BranchTransfersCounter">عداد حوالات الفروع</text>
 	  
     <text name="TheDestinationBranchDoseNotDealInThisCurrency">الفرع المرسل إليه هذه الحوالة لا يتعامل بهذه العملة</text>
-  
+
+	  <text name="DirectTransfer">الحوالات المباشرة</text>
+	  <text name="Receipt">قبض</text>
+	  <text name="Spend">صرف</text>
+	  <text name="Management">الادارة</text>
+	  <text name="BeforChange">قبل التعديل</text>
+	  <text name="AfterChange">بعد التعديل</text>
+	  <text name="ChangeDate">تاريخ التعديل</text>
+	  <text name="Update">تعديل</text>
+	  <text name="ChangeType">الإجراء</text>
+	  <text name="ManagementStatement">تقرير الإدارة</text>	  
 
   </texts>
 </localizationDictionary>

@@ -19,5 +19,6 @@ namespace Bwr.Exchange.Settings.Clients.Services
         bool CheckIfNameAlreadyExist(string name, int branchId);
         bool CheckIfNameAlreadyExist(int id, string name, int branchId);
         Task<IList<Client>> GetAllForCurrentBranchAsync(int branchId);
+        string GetClientNameById(int id);
     }
 }
