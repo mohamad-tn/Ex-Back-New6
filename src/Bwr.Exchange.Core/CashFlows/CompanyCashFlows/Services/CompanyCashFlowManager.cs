@@ -314,8 +314,7 @@ namespace Bwr.Exchange.CashFlows.CompanyCashFlows.Services
             var companyCashFlow = _companyCashFlowRepository
                 .FirstOrDefault(x =>
                 x.CompanyId == companyId &&
-                x.Matched == true &&
-                x.Date.Date == DateTime.Now.Date);
+                x.Matched == true);
 
             return companyCashFlow != null;
         }

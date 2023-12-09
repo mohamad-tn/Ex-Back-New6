@@ -322,8 +322,7 @@ namespace Bwr.Exchange.CashFlows.ClientCashFlows.Services
             var clientCashFlow = _clientCashFlowRepository
                 .FirstOrDefault(x =>
                 x.ClientId == clientId &&
-                x.Matched == true &&
-                x.Date.Date == DateTime.Now.Date);
+                x.Matched == true);
 
             return clientCashFlow != null;
         }

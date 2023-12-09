@@ -24,6 +24,9 @@ using Bwr.Exchange.Settings.Clients;
 using Bwr.Exchange.Settings.Companies;
 using Bwr.Exchange.Settings.Currencies.Services;
 using Bwr.Exchange.Settings.Currencies;
+using Abp.Events.Bus;
+using Abp.Runtime.Session;
+using Bwr.Exchange.CashFlows.ManagementStatement.Events;
 
 namespace Bwr.Exchange.Transfers.OutgoingTransfers
 {
@@ -95,6 +98,8 @@ namespace Bwr.Exchange.Transfers.OutgoingTransfers
 
         public async Task<OutgoingTransferDto> UpdateAsync(OutgoingTransferDto input)
         {
+            var branch = await GetCurrentBranch();
+
             var outgoingTransfer = await _outgoingTransferManager.GetByIdAsync(input.Id);
             if (outgoingTransfer.ToBranchId != null &&
                 outgoingTransfer.Status == OutgoingTransferStatus.Accepted)
@@ -103,6 +108,95 @@ namespace Bwr.Exchange.Transfers.OutgoingTransfers
             }
             else
             {
+                string before = "";
+                string after = "";
+
+                #region Before & After
+                if (outgoingTransfer.Note != input.Note)
+                {
+                    before = L("Note") + " : " + outgoingTransfer.Note;
+                    after = L("Note") + " : " + input.Note;
+                }
+
+                if (outgoingTransfer.CurrencyId != input.CurrencyId)
+                {
+                    before = before + " - " + L("Currency") + " : " + (outgoingTransfer.CurrencyId != null ? _currencyManager.GetCurrencyNameById(outgoingTransfer.CurrencyId) : " ");
+                    after = after + " - " + L("Currency") + " : " + (input.CurrencyId != null ? _currencyManager.GetCurrencyNameById(input.CurrencyId) : " ");
+                }
+
+                if (outgoingTransfer.BeneficiaryId != input.BeneficiaryId)
+                {
+                    before = before + " - " + L("Beneficiary") + " : " + (outgoingTransfer.BeneficiaryId != null ? _customerManager.GetCustomerNameById((int)outgoingTransfer.BeneficiaryId) : " ");
+                    after = after + " - " + L("Beneficiary") + " : " + (input.BeneficiaryId != null ? _customerManager.GetCustomerNameById((int)input.BeneficiaryId) : " ");
+                }
+
+                if (outgoingTransfer.SenderId != input.SenderId)
+                {
+                    before = before + " - " + L("Sender") + " : " + (outgoingTransfer.SenderId != null ? _customerManager.GetCustomerNameById((int)outgoingTransfer.SenderId) : " ");
+                    after = after + " - " + L("Sender") + " : " + (input.SenderId != null ? _customerManager.GetCustomerNameById((int)input.SenderId) : " ");
+                }
+
+                if (outgoingTransfer.Amount != input.Amount)
+                {
+                    before = before + " - " + L("Amount") + " : " + outgoingTransfer.Amount;
+                    after = after + " - " + L("Amount") + " : " + input.Amount;
+                }
+
+                if (outgoingTransfer.ToCompanyId != input.ToCompanyId)
+                {
+                    before = before + " - " + L("ToCompany") + " : " + (outgoingTransfer.ToCompanyId != null ? _companyManager.GetCompanyNameById((int)outgoingTransfer.ToCompanyId) : " ");
+                    after = after + " - " + L("ToCompany") + " : " + (input.ToCompanyId != null ? _companyManager.GetCompanyNameById((int)input.ToCompanyId) : " ");
+                }
+
+                if (outgoingTransfer.FromCompanyId != input.FromCompanyId)
+                {
+                    before = before + " - " + L("FromCompany") + " : " + (outgoingTransfer.FromCompanyId != null ? _companyManager.GetCompanyNameById((int)outgoingTransfer.FromCompanyId) : " ");
+                    after = after + " - " + L("FromCompany") + " : " + (input.FromCompanyId != null ? _companyManager.GetCompanyNameById((int)input.FromCompanyId) : " ");
+                }
+
+                if ((int)outgoingTransfer.PaymentType != input.PaymentType)
+                {
+                    before = before + " - " + L("PaymentType") + " : " + L(((PaymentType)outgoingTransfer.PaymentType).ToString());
+                    after = after + " - " + L("PaymentType") + " : " + L(((PaymentType)input.PaymentType).ToString());
+                }
+
+                if (outgoingTransfer.FromClientId != input.FromClientId)
+                {
+                    before = before + " - " + L("FromClient") + " : " + (outgoingTransfer.FromClientId != null ? _clientManager.GetClientNameById((int)outgoingTransfer.FromClientId) : " ");
+                    after = after + " - " + L("FromClient") + " : " + (input.FromClientId != null ? _clientManager.GetClientNameById((int)input.FromClientId) : " ");
+                }
+
+                if (outgoingTransfer.ReceivedAmount != input.ReceivedAmount)
+                {
+                    before = before + " - " + L("ReceivedAmount") + " : " + outgoingTransfer.ReceivedAmount;
+                    after = after + " - " + L("ReceivedAmount") + " : " + input.ReceivedAmount;
+                }
+
+                if (outgoingTransfer.InstrumentNo != input.InstrumentNo)
+                {
+                    before = before + " - " + L("InstrumentNo") + " : " + outgoingTransfer.InstrumentNo;
+                    after = after + " - " + L("InstrumentNo") + " : " + input.InstrumentNo;
+                }
+
+                if (outgoingTransfer.Reason != input.Reason)
+                {
+                    before = before + " - " + L("Reason") + " : " + outgoingTransfer.Reason;
+                    after = after + " - " + L("Reason") + " : " + input.Reason;
+                }
+                #endregion
+
+
+                EventBus.Default.Trigger(
+                    new CreateManagementEventData(
+                        0, outgoingTransfer.Amount, outgoingTransfer.Date, (int?)outgoingTransfer.PaymentType,
+                        DateTime.Now, 0, outgoingTransfer.Number, null, null, before, after, null, null, null, null,
+                        null, null, outgoingTransfer.Commission, null, null, outgoingTransfer.CurrencyId,
+                        outgoingTransfer.FromClientId, AbpSession.GetUserId(), outgoingTransfer.FromCompanyId
+                        , outgoingTransfer.SenderId, outgoingTransfer.BeneficiaryId, outgoingTransfer.ToCompanyId, null,branch.Id
+                        )
+                    );
+
+
                 var date = DateTime.Parse(input.Date);
                 date = new DateTime
                         (
@@ -139,10 +233,22 @@ namespace Bwr.Exchange.Transfers.OutgoingTransfers
 
         public async Task DeleteAsync(int id)
         {
+            var branch = await GetCurrentBranch();
+
             var outgoingTransfer = await _outgoingTransferManager.GetByIdAsync(id);
             if(outgoingTransfer != null)
             {
                 await _outgoingTransferManager.DeleteAsync(outgoingTransfer);
+
+                EventBus.Default.Trigger(
+                new CreateManagementEventData(
+                    0, outgoingTransfer.Amount, outgoingTransfer.Date, (int?)outgoingTransfer.PaymentType,
+                    DateTime.Now, 1, outgoingTransfer.Number, null, null, null, null, null, null, null, null,
+                    null, null, outgoingTransfer.Commission, null, null, outgoingTransfer.CurrencyId,
+                    outgoingTransfer.FromClientId, AbpSession.GetUserId(), outgoingTransfer.FromCompanyId
+                    , outgoingTransfer.SenderId, outgoingTransfer.BeneficiaryId, outgoingTransfer.ToCompanyId, null,branch.Id
+                    )
+                );
             }
         }
 

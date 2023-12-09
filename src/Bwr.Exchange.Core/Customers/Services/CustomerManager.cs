@@ -55,7 +55,13 @@ namespace Bwr.Exchange.Customers.Services
             }
             else
             {
-                var id = await _customerRepository.InsertAndGetIdAsync(input);
+                var newCustomer = new Customer();
+                newCustomer.Name = input.Name;
+                newCustomer.PhoneNumber = input.PhoneNumber;
+                newCustomer.Address = input.Address;
+                newCustomer.IdentificationNumber = input.IdentificationNumber;
+
+                var id = await _customerRepository.InsertAndGetIdAsync(newCustomer);
                 return await _customerRepository.GetAsync(id);
             }
         }
@@ -70,6 +76,24 @@ namespace Bwr.Exchange.Customers.Services
             return await _customerRepository.GetAsync(id);
         }
 
-        
+        public string GetCustomerNameById(int id)
+        {
+            var customer = _customerRepository.Get(id);
+            return customer.Name;
+        }
+
+        public async Task<Customer> GetCustomerWithImages(int id)
+        {
+            var customer = await _customerRepository.GetAsync(id);
+
+            if (customer != null)
+            {
+                await _customerRepository.EnsureCollectionLoadedAsync(customer, x => x.Images);
+            }
+
+            return customer;
+
+
+        }
     }
 }

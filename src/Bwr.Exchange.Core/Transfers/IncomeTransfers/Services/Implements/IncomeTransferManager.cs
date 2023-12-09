@@ -21,6 +21,7 @@ using Bwr.Exchange.CashFlows.ClientCashFlows.Services;
 using Bwr.Exchange.CashFlows.TreasuryCashFlows.Events.TreasuryCashFlowDeletedMulti;
 using Bwr.Exchange.CashFlows.TreasuryCashFlows.Services;
 using Bwr.Exchange.Transfers.OutgoingTransfers;
+using System.Linq.Dynamic.Core;
 
 namespace Bwr.Exchange.Transfers.IncomeTransfers.Services.Implements
 {
@@ -128,15 +129,24 @@ namespace Bwr.Exchange.Transfers.IncomeTransfers.Services.Implements
 
         public IQueryable<IncomeTransfer> Get(DateTime fromDate, DateTime toDate, int? companyId, int? number)
         {
-            if(number == null)
+            if (number == null && companyId != null)
             {
                 return _incomeTransferRepository.GetAllIncluding(c => c.Company, i => i.IncomeTransferDetails)
                 .Where(x => x.Date >= fromDate && x.Date <= toDate && x.CompanyId == companyId);
             }
-            else
+            else if (number == null && companyId == null)
+            {
+                return _incomeTransferRepository.GetAllIncluding(c => c.Company, i => i.IncomeTransferDetails)
+               .Where(x => x.Date >= fromDate && x.Date <= toDate);
+            }
+            else if (number != null)
             {
                 return _incomeTransferRepository.GetAllIncluding(c => c.Company, i => i.IncomeTransferDetails)
                 .Where(x => x.Number == number);
+            }
+            else
+            {
+                return _incomeTransferRepository.GetAllIncluding(c => c.Company, i => i.IncomeTransferDetails);
             }
         }
 
@@ -274,9 +284,21 @@ namespace Bwr.Exchange.Transfers.IncomeTransfers.Services.Implements
             //EventBus.Trigger(multiEventData);
         }
 
-        public int GetLastNumber()
+        public int GetLastNumber(int branchId)
         {
-            var last = _incomeTransferRepository.GetAll().OrderByDescending(x => x.Number).FirstOrDefault();
+            IList<IncomeTransfer> incomeTransfers = new List<IncomeTransfer>();
+
+            var branchCompanies = AsyncHelper.RunSync(() => _companyManager.GetAllForCurrentBranchAsync(branchId));
+
+            var allIncomeTransfers = _incomeTransferRepository.GetAll();
+            foreach (var incomeTransfer in allIncomeTransfers)
+            {
+                if (branchCompanies.Contains(incomeTransfer.Company))
+                {
+                    incomeTransfers.Add(incomeTransfer);
+                }
+            }
+            var last = incomeTransfers.OrderByDescending(x => x.Number).FirstOrDefault();
             return last == null ? 0 : last.Number;
         }
 

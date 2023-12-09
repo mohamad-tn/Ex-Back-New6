@@ -17,7 +17,7 @@ namespace Bwr.Exchange.Transfers.IncomeTransfers.Services.Interfaces
         IncomeTransfer GetById(int id);
         Task<bool> DeleteDetailsAsync(IncomeTransfer incomeTransfer);
         Task CreateCashFlowAsync(IncomeTransfer createdIncomeTransfer);
-        int GetLastNumber();
+        int GetLastNumber(int branchId);
         Task<bool> DeleteAsync(IncomeTransfer incomeTransfer);
         Task<Dictionary<string, double>> GetAllForBranch(int? branchId);
     }

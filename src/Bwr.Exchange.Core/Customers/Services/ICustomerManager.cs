@@ -13,5 +13,7 @@ namespace Bwr.Exchange.Customers.Services
         Task<IList<Customer>> GetAllAsync();
         Task<Customer> GetByNameAsync(string name);
         Task<Customer> AddIdentityNumber(string identificationNumber, int id);
+        string GetCustomerNameById(int id);
+        Task<Customer> GetCustomerWithImages(int id);
     }
 }

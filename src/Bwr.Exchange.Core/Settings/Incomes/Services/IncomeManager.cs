@@ -64,6 +64,12 @@ namespace Bwr.Exchange.Settings.Incomes.Services
             return await _incomeRepository.UpdateAsync(income);
         }
 
+        public string GetIncomeNameById(int id)
+        {
+            var income = _incomeRepository.Get(id);
+            return income.Name;
+        }
+
 
     }
 }

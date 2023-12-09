@@ -37,6 +37,8 @@ namespace Bwr.Exchange.Transfers.OutgoingTransfers.Events
             var companies = await _combanyManager.GetAllForCurrentBranchAsync((int)eventData.branchId);
             var clients = await _clientManager.GetAllForCurrentBranchAsync((int)eventData.branchId);
 
+            var lastNumber = _incomeTransferManager.GetLastNumber((int)eventData.branchId);
+
             DateTime date;
             var NewDate = DateTime.TryParse(eventData.Date, out date);
 
@@ -44,7 +46,8 @@ namespace Bwr.Exchange.Transfers.OutgoingTransfers.Events
             {
                 CompanyId = eventData.CompanyId,
                 Date = date,
-                Note = eventData.Note
+                Note = eventData.Note,
+                Number = lastNumber + 1
             };
 
             IncomeTransferDetail incomeDetail = new IncomeTransferDetail()
@@ -84,7 +87,7 @@ namespace Bwr.Exchange.Transfers.OutgoingTransfers.Events
             }
 
             incomeTransfer.AddIncomeTransferDetail(incomeDetail);
-
+           
             var insertedIncomeTransfer = await _incomeTransferManager.CreateAsync(incomeTransfer);
 
         }

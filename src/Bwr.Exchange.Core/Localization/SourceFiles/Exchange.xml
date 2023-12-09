@@ -1,355 +1,370 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <localizationDictionary culture="en">
-  <texts>
-    <text name="HomePage" value="الصفحة الرئيسية" />
-    <text name="Home" value="الصفحة الرئيسية" />
-    <text name="About" value="About" />
-    <text name="WelcomeMessage" value="Welcome to Exchange!" />
-    <text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />
-    <text name="TenantNameCanNotBeEmpty" value="Tenant name can not be empty" />
-    <text name="InvalidUserNameOrPassword" value="Invalid user name or password" />
-    <text name="ThereIsNoTenantDefinedWithName{0}" value="There is no tenant defined with name {0}" />
-    <text name="TenantIsNotActive" value="Tenant {0} is not active." />
-    <text name="UserIsNotActiveAndCanNotLogin" value="User {0} is not active and can not log in." />
-    <text name="UserEmailIsNotConfirmedAndCanNotLogin">Your email address is not confirmed. You can not login.</text>
-    <text name="UserLockedOutMessage">The user account has been locked out. Please try again later.</text>
-    <text name="PleaseEnterLoginInformation" value="Please enter login information" />
-    <text name="TenancyName" value="Tenancy name" />
-    <text name="UserNameOrEmail" value="اسم المستخدم او البريد الالكتروني" />
-    <text name="Password" value="كلمة المرور" />
-    <text name="ResetPassword" value="تصفير كلمة المرور" />
-    <text name="UpdatePassword" value="تعديل كلمة المرور" />
-    <text name="RememberMe" value="تذكرني" />
-    <text name="LogIn" value="دخول" />
-    <text name="LoginFailed" value="فشل تسجيل الدخول!" />
-    <text name="NameSurname" value="الاسم والكنية" />
-    <text name="UserName" value="اسم المستخدم" />
-    <text name="Name" value="الاسم" />
-    <text name="Surname" value="الكنية" />
-    <text name="EmailAddress" value="البريدالالكتروني" />
-    <text name="Tenants" value="Tenants" />
-    <text name="SavedSuccessfully" value="تم الحفظ بنجاح " />
-    <text name="CreateNewTenant" value="Create new tenant" />
-    <text name="AdminEmailAddress" value="Admin email address" />
-    <text name="AdminPassword" value="كلمة مرور مدير النظام" />
-    <text name="Save" value="حفظ" />
-    <text name="Cancel" value="إلغاء الأمر" />
-    <text name="TenantName_Regex_Description" value="Tenant name must be at least 2 chars, starts with a letter and continue with letter, number, dash or underscore." />
-    <text name="DefaultPasswordIs" value="Default password is {0}" />
-    <text name="CanBeEmptyToLoginAsHost" value="Can be empty to login as host." />
-    <text name="Register" value="تسجيل" />
-    <text name="OrLoginWith" value="Or login with" />
-    <text name="WaitingForActivationMessage" value="Your account is waiting to be activated by system admin." />
-    <text name="TenantSelection" value="Tenant Selection" />
-    <text name="TenantSelection_Detail" value="Please select one of the following tenants." />
-    <text name="Logout" value="تسجيل الخروج" />
-    <text name="RegisterFormUserNameInvalidMessage">Please don't enter an email address for username.</text>
-    <text name="DatabaseConnectionString" value="Database connection string" />
-    <text name="Users" value="المستخدمين" />
-    <text name="Creator" value="المنشئ" />
-    <text name="IsActive" value="مفعل" />
-    <text name="FullName" value="الاسم الكامل" />
-    <text name="CreateNewUser" value="إضافة مستخدم جديد" />
-    <text name="Yes" value="نعم" />
-    <text name="No" value="لا" />
-    <text name="Optional" value="اختياري" />
-    <text name="LeaveEmptyToSwitchToHost">Leave empty to switch to the host</text>
-    <text name="CurrentTenant">Current tenant</text>
-    <text name="NotSelected">Not selected</text>
-    <text name="Change">Change</text>
-    <text name="ChangeTenant">Change tenant</text>
-    <text name="MultiLevelMenu">Multi Level Menu</text>
-    <text name="Back">خلف</text>
-    <text name="SuccessfullyRegistered">Successfully registered</text>
-    <text name="WaitingForEmailActivation">Your email address should be activated</text>
-    <text name="Roles">الأدوار</text>
-    <text name="DisplayName">الاسم الذي سيعرض</text>
-    <text name="Edit">تعديل</text>
-    <text name="Delete">حذف</text>
-    <text name="CreateNewRole">إضافة دور جديد</text>
-    <text name="RoleName">اسم الدور</text>
-    <text name="Actions">الأوامر</text>
-    <text name="CouldNotCompleteLoginOperation">Could not complete login operation. Please try again later.</text>
-    <text name="CouldNotValidateExternalUser">Could not validate external user</text>
-    <text name="EditRole">تعديل دور</text>
-    <text name="EditTenant">Edit tenant</text>
-    <text name="EditUser">تعديل مستخدم</text>
-    <text name="TenantIdIsNotActive{0}">TenantId {0} is not active</text>
-    <text name="UnknownTenantId{0}">Unknown tenantId {0}</text>
-    <text name="ThisFieldIsRequired">هذا الحقل مطلوب</text>
-    <text name="TheField{0}IsRequired">الحقل {0} مطلوب</text>
-    <text name="PleaseWait">الرجاء الأنتظار ...</text>
-    <text name="Administration">Administration</text>
-    <text name="ClearAll">مسح الكل</text>
-    <text name="ClearOthers">Clear others</text>
-    <text name="LabelOptions">Label options</text>
-    <text name="Permissions">الصلاحيات</text>
-    <text name="RoleDescription">وصف الدور</text>
-    <text name="Refresh">تحديث</text>
-    <text name="Create">إضافة</text>
-    <text name="UserDetails">تفاصيل بيانات المستخدم</text>
-    <text name="UserRoles">أدوار المستخدم</text>
-    <text name="ConfirmPassword">تأكيد كلمة المرور</text>
-    <text name="Version">النسخة</text>
-    <text name="On">On</text>
-    <text name="Off">Off</text>
-    <text name="AreYouSureWantToDelete"> هل انت متأكد من الحذف {0}</text>
-    <text name="SuccessfullyDeleted">تم الحذف بنجاح</text>
-    <text name="StartTyping">Start Typing</text>
-    <text name="Skins">Skins</text>
-    <text name="Settings">الإعدادات</text>
-    <text name="Filter">تصفية</text>
-    <text name="CurrentPassword">كلمة المرور الحالية</text>
-    <text name="NewPassword">كلمة المرور الجديدة</text>
-    <text name="ConfirmNewPassword">تأكيد كلمة المرور</text>
-    <text name="PasswordsDoNotMatch">كلمة المرور غير متطابقة</text>
-    <text name="PasswordsMustBeAtLeast8CharactersContainLowercaseUppercaseNumber">Passwords must be at least 8 characters, contain a lowercase, uppercase, and number</text>
-    <text name="UserDeleteWarningMessage">User {0} will be deleted.</text>
-    <text name="RoleDeleteWarningMessage">Role {0} will be deleted and unassigned from all assigned users.</text>
-    <text name="TenantDeleteWarningMessage">Tenant {0} will be deleted.</text>
-    <text name="SearchWithThreeDot">بحث ...</text>
-    <text name="PleaseEnterAtLeastNCharacter">Please enter at least {0} characters</text>
-    <text name="PleaseEnterNoMoreThanNCharacter">Please enter no more than {0} characters</text>
-    <text name="InvalidEmailAddress">Invalid email address</text>
-    <text name="InvalidPattern">Invalid</text>
-    <text name="PairsDoNotMatch">Do not match</text>
-    <text name="All">All</text>
-    <text name="ChangePermissions">تغيير الصلاحيات</text>
-    <text name="DeleteUser">حذف المستخدم</text>
-    <text name="TotalRecordsCount">الاجمالي: {0}</text>
-    <text name="Search">بحث</text>
-    <text name="Clear">مسح</text>
-    <text name="ResetPasswordStepOneInfo">1. أدخل كلمة مرور مدير النظام</text>
-    <text name="ResetPasswordStepTwoInfo">2. انسخ كلمة المرور التي تم توليدها وارسلها للمستخدم</text>
-    <text name="Commands">الاوامر</text>
-    <text name="Auth">إدارة المستخدمين</text>
+	<texts>
+		<text name="HomePage" value="الصفحة الرئيسية" />
+		<text name="Home" value="الصفحة الرئيسية" />
+		<text name="About" value="About" />
+		<text name="WelcomeMessage" value="Welcome to Exchange!" />
+		<text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />
+		<text name="TenantNameCanNotBeEmpty" value="Tenant name can not be empty" />
+		<text name="InvalidUserNameOrPassword" value="Invalid user name or password" />
+		<text name="ThereIsNoTenantDefinedWithName{0}" value="There is no tenant defined with name {0}" />
+		<text name="TenantIsNotActive" value="Tenant {0} is not active." />
+		<text name="UserIsNotActiveAndCanNotLogin" value="User {0} is not active and can not log in." />
+		<text name="UserEmailIsNotConfirmedAndCanNotLogin">Your email address is not confirmed. You can not login.</text>
+		<text name="UserLockedOutMessage">The user account has been locked out. Please try again later.</text>
+		<text name="PleaseEnterLoginInformation" value="Please enter login information" />
+		<text name="TenancyName" value="Tenancy name" />
+		<text name="UserNameOrEmail" value="اسم المستخدم او البريد الالكتروني" />
+		<text name="Password" value="كلمة المرور" />
+		<text name="ResetPassword" value="تصفير كلمة المرور" />
+		<text name="UpdatePassword" value="تعديل كلمة المرور" />
+		<text name="RememberMe" value="تذكرني" />
+		<text name="LogIn" value="دخول" />
+		<text name="LoginFailed" value="فشل تسجيل الدخول!" />
+		<text name="NameSurname" value="الاسم والكنية" />
+		<text name="UserName" value="اسم المستخدم" />
+		<text name="Name" value="الاسم" />
+		<text name="Surname" value="الكنية" />
+		<text name="EmailAddress" value="البريدالالكتروني" />
+		<text name="Tenants" value="Tenants" />
+		<text name="SavedSuccessfully" value="تم الحفظ بنجاح " />
+		<text name="CreateNewTenant" value="Create new tenant" />
+		<text name="AdminEmailAddress" value="Admin email address" />
+		<text name="AdminPassword" value="كلمة مرور مدير النظام" />
+		<text name="Save" value="حفظ" />
+		<text name="Cancel" value="إلغاء الأمر" />
+		<text name="TenantName_Regex_Description" value="Tenant name must be at least 2 chars, starts with a letter and continue with letter, number, dash or underscore." />
+		<text name="DefaultPasswordIs" value="Default password is {0}" />
+		<text name="CanBeEmptyToLoginAsHost" value="Can be empty to login as host." />
+		<text name="Register" value="تسجيل" />
+		<text name="OrLoginWith" value="Or login with" />
+		<text name="WaitingForActivationMessage" value="Your account is waiting to be activated by system admin." />
+		<text name="TenantSelection" value="Tenant Selection" />
+		<text name="TenantSelection_Detail" value="Please select one of the following tenants." />
+		<text name="Logout" value="تسجيل الخروج" />
+		<text name="RegisterFormUserNameInvalidMessage">Please don't enter an email address for username.</text>
+		<text name="DatabaseConnectionString" value="Database connection string" />
+		<text name="Users" value="المستخدمين" />
+		<text name="Creator" value="المنشئ" />
+		<text name="IsActive" value="مفعل" />
+		<text name="FullName" value="الاسم الكامل" />
+		<text name="CreateNewUser" value="إضافة مستخدم جديد" />
+		<text name="Yes" value="نعم" />
+		<text name="No" value="لا" />
+		<text name="Optional" value="اختياري" />
+		<text name="LeaveEmptyToSwitchToHost">Leave empty to switch to the host</text>
+		<text name="CurrentTenant">Current tenant</text>
+		<text name="NotSelected">Not selected</text>
+		<text name="Change">Change</text>
+		<text name="ChangeTenant">Change tenant</text>
+		<text name="MultiLevelMenu">Multi Level Menu</text>
+		<text name="Back">خلف</text>
+		<text name="SuccessfullyRegistered">Successfully registered</text>
+		<text name="WaitingForEmailActivation">Your email address should be activated</text>
+		<text name="Roles">الأدوار</text>
+		<text name="DisplayName">الاسم الذي سيعرض</text>
+		<text name="Edit">تعديل</text>
+		<text name="Delete">حذف</text>
+		<text name="CreateNewRole">إضافة دور جديد</text>
+		<text name="RoleName">اسم الدور</text>
+		<text name="Actions">الأوامر</text>
+		<text name="CouldNotCompleteLoginOperation">Could not complete login operation. Please try again later.</text>
+		<text name="CouldNotValidateExternalUser">Could not validate external user</text>
+		<text name="EditRole">تعديل دور</text>
+		<text name="EditTenant">Edit tenant</text>
+		<text name="EditUser">تعديل مستخدم</text>
+		<text name="TenantIdIsNotActive{0}">TenantId {0} is not active</text>
+		<text name="UnknownTenantId{0}">Unknown tenantId {0}</text>
+		<text name="ThisFieldIsRequired">هذا الحقل مطلوب</text>
+		<text name="TheField{0}IsRequired">الحقل {0} مطلوب</text>
+		<text name="PleaseWait">الرجاء الأنتظار ...</text>
+		<text name="Administration">Administration</text>
+		<text name="ClearAll">مسح الكل</text>
+		<text name="ClearOthers">Clear others</text>
+		<text name="LabelOptions">Label options</text>
+		<text name="Permissions">الصلاحيات</text>
+		<text name="RoleDescription">وصف الدور</text>
+		<text name="Refresh">تحديث</text>
+		<text name="Create">إضافة</text>
+		<text name="UserDetails">تفاصيل بيانات المستخدم</text>
+		<text name="UserRoles">أدوار المستخدم</text>
+		<text name="ConfirmPassword">تأكيد كلمة المرور</text>
+		<text name="Version">النسخة</text>
+		<text name="On">On</text>
+		<text name="Off">Off</text>
+		<text name="AreYouSureWantToDelete"> هل انت متأكد من الحذف {0}</text>
+		<text name="SuccessfullyDeleted">تم الحذف بنجاح</text>
+		<text name="StartTyping">Start Typing</text>
+		<text name="Skins">Skins</text>
+		<text name="Settings">الإعدادات</text>
+		<text name="Filter">تصفية</text>
+		<text name="CurrentPassword">كلمة المرور الحالية</text>
+		<text name="NewPassword">كلمة المرور الجديدة</text>
+		<text name="ConfirmNewPassword">تأكيد كلمة المرور</text>
+		<text name="PasswordsDoNotMatch">كلمة المرور غير متطابقة</text>
+		<text name="PasswordsMustBeAtLeast8CharactersContainLowercaseUppercaseNumber">Passwords must be at least 8 characters, contain a lowercase, uppercase, and number</text>
+		<text name="UserDeleteWarningMessage">User {0} will be deleted.</text>
+		<text name="RoleDeleteWarningMessage">Role {0} will be deleted and unassigned from all assigned users.</text>
+		<text name="TenantDeleteWarningMessage">Tenant {0} will be deleted.</text>
+		<text name="SearchWithThreeDot">بحث ...</text>
+		<text name="PleaseEnterAtLeastNCharacter">Please enter at least {0} characters</text>
+		<text name="PleaseEnterNoMoreThanNCharacter">Please enter no more than {0} characters</text>
+		<text name="InvalidEmailAddress">Invalid email address</text>
+		<text name="InvalidPattern">Invalid</text>
+		<text name="PairsDoNotMatch">Do not match</text>
+		<text name="All">All</text>
+		<text name="ChangePermissions">تغيير الصلاحيات</text>
+		<text name="DeleteUser">حذف المستخدم</text>
+		<text name="TotalRecordsCount">الاجمالي: {0}</text>
+		<text name="Search">بحث</text>
+		<text name="Clear">مسح</text>
+		<text name="ResetPasswordStepOneInfo">1. أدخل كلمة مرور مدير النظام</text>
+		<text name="ResetPasswordStepTwoInfo">2. انسخ كلمة المرور التي تم توليدها وارسلها للمستخدم</text>
+		<text name="Commands">الاوامر</text>
+		<text name="Auth">إدارة المستخدمين</text>
 
-    <text name="Country">البلد</text>
-    <text name="CountryInfo">بيانات البلد</text>
-    <text name="CountryName">اسم البلد</text>
-    <text name="Countries">البلدان</text>
-    <text name="CreateNewCountry">إضافة بلد جديد</text>
-    <text name="EditCountry">تعديل بلد</text>
-    <text name="DeleteCountry">حذف بلد</text>
-    <text name="DoYouWantToRemoveTheCountry">هل تريد حذف البلد؟</text>
+		<text name="Country">البلد</text>
+		<text name="CountryInfo">بيانات البلد</text>
+		<text name="CountryName">اسم البلد</text>
+		<text name="Countries">البلدان</text>
+		<text name="CreateNewCountry">إضافة بلد جديد</text>
+		<text name="EditCountry">تعديل بلد</text>
+		<text name="DeleteCountry">حذف بلد</text>
+		<text name="DoYouWantToRemoveTheCountry">هل تريد حذف البلد؟</text>
 
-    <text name="Currency">العملة</text>
-    <text name="CurrencyName">اسم العملة</text>
-    <text name="Currencies">العملات</text>
-    <text name="CreateNewCurrency">إضافة عملة جديد</text>
-    <text name="EditCurrency">تعديل عملة</text>
-    <text name="DeleteCurrency">حذف عملة</text>
-    <text name="DoYouWantToRemoveTheCurrency">هل تريد حذف العملة؟</text>
+		<text name="Currency">العملة</text>
+		<text name="CurrencyName">اسم العملة</text>
+		<text name="Currencies">العملات</text>
+		<text name="CreateNewCurrency">إضافة عملة جديد</text>
+		<text name="EditCurrency">تعديل عملة</text>
+		<text name="DeleteCurrency">حذف عملة</text>
+		<text name="DoYouWantToRemoveTheCurrency">هل تريد حذف العملة؟</text>
 
-    <text name="Expense">المصاريف</text>
-    <text name="ExpenseName">الاسم</text>
-    <text name="Expenses">المصاريف</text>
-    <text name="CreateNewExpense">إضافة جديد</text>
-    <text name="EditExpense">تعديل مصاريف</text>
-    <text name="DeleteExpense">حذف مصاريف</text>
-    <text name="DoYouWantToRemoveTheExpense">هل تريد الحذف ؟</text>
+		<text name="Expense">المصاريف</text>
+		<text name="ExpenseName">الاسم</text>
+		<text name="Expenses">المصاريف</text>
+		<text name="CreateNewExpense">إضافة جديد</text>
+		<text name="EditExpense">تعديل مصاريف</text>
+		<text name="DeleteExpense">حذف مصاريف</text>
+		<text name="DoYouWantToRemoveTheExpense">هل تريد الحذف ؟</text>
 
-    <text name="Income">الايراد</text>
-    <text name="IncomeName">اسم الايراد</text>
-    <text name="Incomes">الإيرادات</text>
-    <text name="CreateNewIncome">إضافة ايراد جديد</text>
-    <text name="EditIncome">تعديل ايراد</text>
-    <text name="DeleteIncome">حذف ايراد</text>
-    <text name="DoYouWantToRemoveTheIncome">هل تريد حذف الايراد؟</text>
+		<text name="Income">الايراد</text>
+		<text name="IncomeName">اسم الايراد</text>
+		<text name="Incomes">الإيرادات</text>
+		<text name="CreateNewIncome">إضافة ايراد جديد</text>
+		<text name="EditIncome">تعديل ايراد</text>
+		<text name="DeleteIncome">حذف ايراد</text>
+		<text name="DoYouWantToRemoveTheIncome">هل تريد حذف الايراد؟</text>
 
-    <text name="Treasury">الصندوق</text>
-    <text name="TreasuryBalance">رصيد الصندوق</text>
-    <text name="TreasuryBalanceName">اسم الرصيد</text>
-    <text name="TreasuryBalances">رصيد الصندوق</text>
-    <text name="CreateNewTreasuryBalance">إضافة رصيد جديد</text>
-    <text name="EditTreasuryBalance">تعديل رصيد</text>
-    <text name="DeleteTreasuryBalance">حذف رصيد</text>
-    <text name="DoYouWantToRemoveTheTreasuryBalance">هل تريد حذف الرصيد؟</text>
+		<text name="Treasury">الصندوق</text>
+		<text name="TreasuryBalance">رصيد الصندوق</text>
+		<text name="TreasuryBalanceName">اسم الرصيد</text>
+		<text name="TreasuryBalances">رصيد الصندوق</text>
+		<text name="CreateNewTreasuryBalance">إضافة رصيد جديد</text>
+		<text name="EditTreasuryBalance">تعديل رصيد</text>
+		<text name="DeleteTreasuryBalance">حذف رصيد</text>
+		<text name="DoYouWantToRemoveTheTreasuryBalance">هل تريد حذف الرصيد؟</text>
 
-    <text name="Province">المحافظة</text>
-    <text name="Provinces">المحافظات</text>
-    <text name="ProvinceName">اسم المحافظة</text>
-    <text name="TheProvinceAlreadyExist">المحافظة معرفة مسبقاً</text>
+		<text name="Province">المحافظة</text>
+		<text name="Provinces">المحافظات</text>
+		<text name="ProvinceName">اسم المحافظة</text>
+		<text name="TheProvinceAlreadyExist">المحافظة معرفة مسبقاً</text>
 
-    <text name="ClearFilters">مسح التصفية</text>
-    <text name="ClearSorts">مسح الفرز</text>
+		<text name="ClearFilters">مسح التصفية</text>
+		<text name="ClearSorts">مسح الفرز</text>
 
-    <text name="Client">العميل</text>
-    <text name="ClientInfo">بيانات العميل</text>
-    <text name="Clients">العملاء</text>
-    <text name="ClientPhones">هواتف العميل</text>
-    <text name="Address">العنوان</text>
-    <text name="Activated">مفعل</text>
-    <text name="PhoneAlreadyExist">الهاتف معرف مسبقاً </text>
-    <text name="BalanceForThisCurrencyAlreadyExist">لقد قمت بتعريف الرصيد مسبقاً لهذه العملة</text>
-    <text name="Balance">الرصيد</text>
-    <text name="PhoneNumber">رقم الهاتف</text>
-    <text name="DoYouWantToRemoveTheClient">هل تريد حذف العميل</text>
-    <text name="AreYouSure">هل انت متأكد</text>
-    <text name="CreateNewClient">تعريف عميل جديد</text>
-    <text name="EditClient">تعديل عميل</text>
-    <text name="DeleteClient">حذف عميل</text>
-    <text name="ClientBalances">أرصدة العميل</text>
+		<text name="Client">العميل</text>
+		<text name="ClientInfo">بيانات العميل</text>
+		<text name="Clients">العملاء</text>
+		<text name="ClientPhones">هواتف العميل</text>
+		<text name="Address">العنوان</text>
+		<text name="Activated">مفعل</text>
+		<text name="PhoneAlreadyExist">الهاتف معرف مسبقاً </text>
+		<text name="BalanceForThisCurrencyAlreadyExist">لقد قمت بتعريف الرصيد مسبقاً لهذه العملة</text>
+		<text name="Balance">الرصيد</text>
+		<text name="PhoneNumber">رقم الهاتف</text>
+		<text name="DoYouWantToRemoveTheClient">هل تريد حذف العميل</text>
+		<text name="AreYouSure">هل انت متأكد</text>
+		<text name="CreateNewClient">تعريف عميل جديد</text>
+		<text name="EditClient">تعديل عميل</text>
+		<text name="DeleteClient">حذف عميل</text>
+		<text name="ClientBalances">أرصدة العميل</text>
 
-    <text name="Company">الشركة</text>
-    <text name="CompanyInfo">بيانات الشركة</text>
-    <text name="Companies">الشركات</text>
-    <text name="CompanyBalances">أرصدة الشركة</text>
-    <text name="DoYouWantToRemoveTheCompany">هل تريد حذف الشركة</text>
-    <text name="CreateNewCompany">تعريف شركة جديد</text>
-    <text name="EditCompany">تعديل شركة</text>
-    <text name="DeleteCompany">حذف شركة</text>
+		<text name="Company">الشركة</text>
+		<text name="CompanyInfo">بيانات الشركة</text>
+		<text name="Companies">الشركات</text>
+		<text name="CompanyBalances">أرصدة الشركة</text>
+		<text name="DoYouWantToRemoveTheCompany">هل تريد حذف الشركة</text>
+		<text name="CreateNewCompany">تعريف شركة جديد</text>
+		<text name="EditCompany">تعديل شركة</text>
+		<text name="DeleteCompany">حذف شركة</text>
 
-    <text name="InitialBalance">الرصيد الاولي للصندوق</text>
+		<text name="InitialBalance">الرصيد الاولي للصندوق</text>
 
-    <text name="Commision">العمولة</text>
-    <text name="CommisionName">اسم عمولة</text>
-    <text name="Commisions">العمولات</text>
-    <text name="CreateNewCommision">إضافة عمولة جديد</text>
-    <text name="EditCommision">تعديل عمولة</text>
-    <text name="DeleteCommision">حذف عمولة</text>
-    <text name="From">من</text>
-    <text name="To">إلى</text>
-    <text name="Value">القيمة</text>
-    <text name="Percentage">النسبة المئوية</text>
-    <text name="DoYouWantToRemoveTheCommision">هل تريد حذف العمولة؟</text>
+		<text name="Commision">العمولة</text>
+		<text name="CommisionName">اسم عمولة</text>
+		<text name="Commisions">العمولات</text>
+		<text name="CreateNewCommision">إضافة عمولة جديد</text>
+		<text name="EditCommision">تعديل عمولة</text>
+		<text name="DeleteCommision">حذف عمولة</text>
+		<text name="From">من</text>
+		<text name="To">إلى</text>
+		<text name="Value">القيمة</text>
+		<text name="Percentage">النسبة المئوية</text>
+		<text name="DoYouWantToRemoveTheCommision">هل تريد حذف العمولة؟</text>
 
-    <text name="OnHim">عليه</text>
-    <text name="ForHim">له</text>
+		<text name="OnHim">عليه</text>
+		<text name="ForHim">له</text>
 
-    <text name="ClientCashFlow">التدفق النقدي للعميل</text>
-    <text name="Commission">العمولة</text>
-    <text name="ClientCommission">عمولة العميل</text>
-    <text name="CompanyCommission">عمولة الشركة</text>
-    <text name="Date">التاريخ</text>
-    <text name="Amount">المبلغ</text>
-    <text name="CurrentBalance">الرصيد الحالي</text>
-    <text name="Transaction">عملية</text>
-    <text name="TransactionType">نوع العملية</text>
-    <text name="Matched">مطابق</text>
-    <text name="Matcher">اسم المطابق</text>
-    <text name="Matching">المطابقة</text>
-    <text name="Shaded">مضلل</text>
-    <text name="Shading">تظليل</text>
-    <text name="Note">ملاحظات</text>
+		<text name="ClientCashFlow">التدفق النقدي للعميل</text>
+		<text name="Commission">العمولة</text>
+		<text name="ClientCommission">عمولة العميل</text>
+		<text name="CompanyCommission">عمولة الشركة</text>
+		<text name="Date">التاريخ</text>
+		<text name="Amount">المبلغ</text>
+		<text name="CurrentBalance">الرصيد الحالي</text>
+		<text name="Transaction">عملية</text>
+		<text name="TransactionType">نوع العملية</text>
+		<text name="Matched">مطابق</text>
+		<text name="Matcher">اسم المطابق</text>
+		<text name="Matching">المطابقة</text>
+		<text name="Shaded">مضلل</text>
+		<text name="Shading">تظليل</text>
+		<text name="Note">ملاحظات</text>
 
-    <text name="OutgoingTransfer">الحوالة الصادرة</text>
-    <text name="CreateNewOutgoingTransfer">إضافة حوالة صادرة</text>
-    <text name="EditOutgoingTransfer">تعديل حوالة صادرة</text>
-    <text name="OutgoingTransfers">الحوالات الصادرة</text>
-    <text name="Transfers">الحوالات</text>
-    <text name="ToCompany">إلى شركة</text>
-    <text name="ToClient">إلى العميل</text>
-    <text name="ReceivedAmount">المبلغ الواصل</text>
-    <text name="PaidAmount">المبلغ المدفوع</text>
-    <text name="RequiredAmount">المبلغ المطلوب</text>
-    <text name="InstrumentNo">رقم الصك</text>
-    <text name="Reason">السبب</text>
-    <text name="IncomeTransfer">حوالة واردة</text>
-    <text name="IncomeTransfers">الحوالات الواردة</text>
-    <text name="Receiver">المستلم</text>
-    <text name="Sender">المرسل</text>
-    <text name="SenderPhone">هاتف المرسل</text>
-    <text name="FromCompany">من الشركة</text>
-    <text name="FromClient">من العميل</text>
-    <text name="Statement">كشف</text>
-    <text name="Statements">الكشوف</text>
-    <text name="ClientBalanceStatement">كشف رصيد العميل</text>
-    <text name="MainInfo">المعلومات الأساسية</text>
-    <text name="FinancialInfo">المعلومات المالية</text>
-    <text name="AdditionalInfo">معلومات إضافية</text>
-    <text name="SelectDate">أختر تاريخ</text>
-    <text name="PreviousCompanyBalance">رصيد سابق للشركة</text>
-    <text name="PreviousBalance">رصيد سابق </text>
-    <text name="SenderAndReceiverInfo">معلومات المرسل والمستقبل</text>
-    <text name="SenderInfo">معلومات المرسل </text>
-    <text name="ReceiverInfo">معلومات المستقبل</text>
-    <text name="PaymentType">نوع الدفع</text>
-    <text name="Beneficiary">المستفيد</text>
-    <text name="BeneficiaryAddress">عنوان المستفيد</text>
-    <text name="BeneficiaryPhone">هاتف المستفيد</text>
-    <text name="MainAccount">الحساب الرئيسي</text>
-    <text name="ActionType">نوع الحركة</text>
-    <text name="ExchangeParty">جهة الصرف</text>
-    <text name="Issuer">جهة الإصدار</text>
-    <text name="IdentificationNumber">رقم الهوية</text>
-    <text name="Type">النوع</text>
-    <text name="CompanyBalanceStatement">كشف رصيد الشركة</text>
-    <text name="TreasuryBalanceStatement">كشف رصيد الصندوق</text>
-    <text name="YouMustCreateTreasuryFirst">يجب تعريف الصندوق الرئيسي أولاً</text>
-    <text name="CurrentUserIsNotAssociatedWithBranchAndTreasury"> لا يمكن إكمال الطلب ,المستخدم الحالي غير مرتبط بفرع</text>
+		<text name="OutgoingTransfer">الحوالة الصادرة</text>
+		<text name="CreateNewOutgoingTransfer">إضافة حوالة صادرة</text>
+		<text name="EditOutgoingTransfer">تعديل حوالة صادرة</text>
+		<text name="OutgoingTransfers">الحوالات الصادرة</text>
+		<text name="Transfers">الحوالات</text>
+		<text name="ToCompany">إلى شركة</text>
+		<text name="ToClient">إلى العميل</text>
+		<text name="ReceivedAmount">المبلغ الواصل</text>
+		<text name="PaidAmount">المبلغ المدفوع</text>
+		<text name="RequiredAmount">المبلغ المطلوب</text>
+		<text name="InstrumentNo">رقم الصك</text>
+		<text name="Reason">السبب</text>
+		<text name="IncomeTransfer">حوالة واردة</text>
+		<text name="IncomeTransfers">الحوالات الواردة</text>
+		<text name="Receiver">المستلم</text>
+		<text name="Sender">المرسل</text>
+		<text name="SenderPhone">هاتف المرسل</text>
+		<text name="FromCompany">من الشركة</text>
+		<text name="FromClient">من العميل</text>
+		<text name="Statement">كشف</text>
+		<text name="Statements">الكشوف</text>
+		<text name="ClientBalanceStatement">كشف رصيد العميل</text>
+		<text name="MainInfo">المعلومات الأساسية</text>
+		<text name="FinancialInfo">المعلومات المالية</text>
+		<text name="AdditionalInfo">معلومات إضافية</text>
+		<text name="SelectDate">أختر تاريخ</text>
+		<text name="PreviousCompanyBalance">رصيد سابق للشركة</text>
+		<text name="PreviousBalance">رصيد سابق </text>
+		<text name="SenderAndReceiverInfo">معلومات المرسل والمستقبل</text>
+		<text name="SenderInfo">معلومات المرسل </text>
+		<text name="ReceiverInfo">معلومات المستقبل</text>
+		<text name="PaymentType">نوع الدفع</text>
+		<text name="Beneficiary">المستفيد</text>
+		<text name="BeneficiaryAddress">عنوان المستفيد</text>
+		<text name="BeneficiaryPhone">هاتف المستفيد</text>
+		<text name="MainAccount">الحساب الرئيسي</text>
+		<text name="ActionType">نوع الحركة</text>
+		<text name="ExchangeParty">جهة الصرف</text>
+		<text name="Issuer">جهة الإصدار</text>
+		<text name="IdentificationNumber">رقم الهوية</text>
+		<text name="Type">النوع</text>
+		<text name="CompanyBalanceStatement">كشف رصيد الشركة</text>
+		<text name="TreasuryBalanceStatement">كشف رصيد الصندوق</text>
+		<text name="YouMustCreateTreasuryFirst">يجب تعريف الصندوق الرئيسي أولاً</text>
+		<text name="CurrentUserIsNotAssociatedWithBranchAndTreasury"> لا يمكن إكمال الطلب ,المستخدم الحالي غير مرتبط بفرع</text>
 
-    <text name="Export">الصادر</text>
-    <text name="Import">الوارد</text>
-    <text name="FromDate">من تاريخ</text>
-    <text name="ToDate">إلى تاريخ</text>
-    <text name="From-Company-Client"> من عميل/شركة </text>
-    <text name="SearchOutgoingTransfers">بحث حوالات صادرة</text>
-    <text name="SearchIcomeTransfers">بحث حوالات واردة</text>
-    <text name="SearchTreasuryActions">بحث حركات الصندوق</text>
-    <text name="ExchangePrice">سعر الصرف</text>
-    <text name="ExchangePrices">اسعار الصرف</text>
-    <text name="MainPrice">سعر الصرف الاساسي</text>
-    <text name="PurchasingPrice">سعر الشراء</text>
-    <text name="SellingPrice">سعر البيع</text>
-    <text name="ExchangeCurrency">الصرافة</text>
-    <text name="AmountOfFirstCurrency">مبلغ العملة الاولى</text>
-    <text name="AmoutOfSecondCurrency">مبلغ العملة الثانية</text>
-    <text name="FirstCurrency">العملة الاولى</text>
-    <text name="SecondCurrency">العملة الثانية</text>
-    <text name="MainCurrency">العملة الاساسية</text>
-    <text name="PaidAmountOfFirstCurrency">المبلغ المدفوع </text>
-    <text name="ReceivedAmountOfSecondCurrency">المبلغ الواصل </text>
-    <text name="NoneReceivedTransfer">الحوالات غير المسلمة</text>
-    <text name="Paid">المدفوع</text>
-    <text name="Received">الواصل</text>
-    <text name="Status">الحالة</text>
-    <text name="ChangeStatus">تغيير الحالة</text>
-    <text name="MatchingBy">المطابق</text>
-    <text name="MatchingWith">مطابقة مع</text>
-    <text name="Description">تقاصيل</text>
-    <text name="IsMainCurrency">العملة الاساسية</text>
-    <text name="Cash">نقدي</text>
-    <text name="ListNumber">رقم القائمة</text>
-    <text name="DocumentNumber">رقم السند</text>
-    <text name="Number">الرقم</text>
-    <text name="FaxNumber">رقم الفاكس</text>
-    <text name="TotalBalanceStatement">كشف ارصدة العملاء والشركات</text>
-    <text name="OutgoingTransferStatement">كشف الحوالات الصادرة</text>
-    <text name="TreasuryActionStatement">كشف حركات الصندوق</text>
-    <text name="SpendsStatment">كشف تحليل المقبوضات</text>
-    <text name="ReceiptsStatment">كشف تحليل المدفوعات</text>
-    <text name="DefaultersOfPayment">كشف المتأخرين عن السداد</text>
-    <text name="days">عدد الايام</text>
-    <text name="ExchangeCurrencyStatement">كشف ارباح الصيرفة</text>
-    <text name="InactiveClientStatment">كشف العملاء متوقفي الحركة</text>
-    <text name="Summary">الخلاصة</text>
+		<text name="Export">الصادر</text>
+		<text name="Import">الوارد</text>
+		<text name="FromDate">من تاريخ</text>
+		<text name="ToDate">إلى تاريخ</text>
+		<text name="From-Company-Client"> من عميل/شركة </text>
+		<text name="SearchOutgoingTransfers">بحث حوالات صادرة</text>
+		<text name="SearchIcomeTransfers">بحث حوالات واردة</text>
+		<text name="SearchTreasuryActions">بحث حركات الصندوق</text>
+		<text name="ExchangePrice">سعر الصرف</text>
+		<text name="ExchangePrices">اسعار الصرف</text>
+		<text name="MainPrice">سعر الصرف الاساسي</text>
+		<text name="PurchasingPrice">سعر الشراء</text>
+		<text name="SellingPrice">سعر البيع</text>
+		<text name="ExchangeCurrency">الصرافة</text>
+		<text name="AmountOfFirstCurrency">مبلغ العملة الاولى</text>
+		<text name="AmoutOfSecondCurrency">مبلغ العملة الثانية</text>
+		<text name="FirstCurrency">العملة الاولى</text>
+		<text name="SecondCurrency">العملة الثانية</text>
+		<text name="MainCurrency">العملة الاساسية</text>
+		<text name="PaidAmountOfFirstCurrency">المبلغ المدفوع </text>
+		<text name="ReceivedAmountOfSecondCurrency">المبلغ الواصل </text>
+		<text name="NoneReceivedTransfer">الحوالات غير المسلمة</text>
+		<text name="Paid">المدفوع</text>
+		<text name="Received">الواصل</text>
+		<text name="Status">الحالة</text>
+		<text name="ChangeStatus">تغيير الحالة</text>
+		<text name="MatchingBy">المطابق</text>
+		<text name="MatchingWith">مطابقة مع</text>
+		<text name="Description">تقاصيل</text>
+		<text name="IsMainCurrency">العملة الاساسية</text>
+		<text name="Cash">نقدي</text>
+		<text name="ListNumber">رقم القائمة</text>
+		<text name="DocumentNumber">رقم السند</text>
+		<text name="Number">الرقم</text>
+		<text name="FaxNumber">رقم الفاكس</text>
+		<text name="TotalBalanceStatement">كشف ارصدة العملاء والشركات</text>
+		<text name="OutgoingTransferStatement">كشف الحوالات الصادرة</text>
+		<text name="TreasuryActionStatement">كشف حركات الصندوق</text>
+		<text name="SpendsStatment">كشف تحليل المقبوضات</text>
+		<text name="ReceiptsStatment">كشف تحليل المدفوعات</text>
+		<text name="DefaultersOfPayment">كشف المتأخرين عن السداد</text>
+		<text name="days">عدد الايام</text>
+		<text name="ExchangeCurrencyStatement">كشف ارباح الصيرفة</text>
+		<text name="InactiveClientStatment">كشف العملاء متوقفي الحركة</text>
+		<text name="Summary">الخلاصة</text>
 
-    <text name="Branches">الفروع</text>
-    <text name="Branche">الفرع</text>
-    <text name="ToBranch">إلى فرع</text>
-    <text name="CreateNewBranche">إضافة فرع</text>
-    <text name="EditBranche">تعديل فرع</text>
-    <text name="DeleteBranche">حذف فرع</text>
-    <text name="FromBranch">من فرع</text>
-
-
-    <text name="IncomeTransferNotAccepted">حوالات الفروع</text>
-    <text name="TheOutgoingTransferHasBeenDisbursedItCannotBeModified">
-      لايمكن التعديل, تم صرف هذه الحوالة
-    </text>
-    <text name="DoYouWantToRejectThisIncomeTransfer">هل تريد رفض هذه الحوالة ؟</text>
-    <text name="DoYouWantToAcceptThisIncomeTransfer">هل تريد قبول هذه الحوالة ؟</text>
-    <text name="SuccessfullyAccepted">تم قبول الحوالة بنجاح</text>
-    <text name="SuccessfullyRejected">تم رفض الحوالة بنجاح</text>
-    <text name="Accept">قبول</text>
-    <text name="Reject">رفض</text>
+		<text name="Branches">الفروع</text>
+		<text name="Branche">الفرع</text>
+		<text name="ToBranch">إلى فرع</text>
+		<text name="CreateNewBranche">إضافة فرع</text>
+		<text name="EditBranche">تعديل فرع</text>
+		<text name="DeleteBranche">حذف فرع</text>
+		<text name="FromBranch">من فرع</text>
 
 
-    <text name="BranchTransfersCounter">عداد حوالات الفروع</text>
-	  
-    <text name="TheDestinationBranchDoseNotDealInThisCurrency">الفرع المرسل إليه هذه الحوالة لا يتعامل بهذه العملة</text>
-  
+		<text name="IncomeTransferNotAccepted">حوالات الفروع</text>
+		<text name="TheOutgoingTransferHasBeenDisbursedItCannotBeModified">
+			لايمكن التعديل, تم صرف هذه الحوالة
+		</text>
+		<text name="DoYouWantToRejectThisIncomeTransfer">هل تريد رفض هذه الحوالة ؟</text>
+		<text name="DoYouWantToAcceptThisIncomeTransfer">هل تريد قبول هذه الحوالة ؟</text>
+		<text name="SuccessfullyAccepted">تم قبول الحوالة بنجاح</text>
+		<text name="SuccessfullyRejected">تم رفض الحوالة بنجاح</text>
+		<text name="Accept">قبول</text>
+		<text name="Reject">رفض</text>
 
-  </texts>
+
+		<text name="BranchTransfersCounter">عداد حوالات الفروع</text>
+
+		<text name="TheDestinationBranchDoseNotDealInThisCurrency">الفرع المرسل إليه هذه الحوالة لا يتعامل بهذه العملة</text>
+
+		<text name="DirectTransfer">الحوالات المباشرة</text>
+		<text name="Receipt">قبض</text>
+		<text name="Spend">صرف</text>
+		<text name="Management">الادارة</text>
+		<text name="BeforChange">قبل التعديل</text>
+		<text name="AfterChange">بعد التعديل</text>
+		<text name="ChangeDate">تاريخ التعديل</text>
+		<text name="Update">تعديل</text>
+		<text name="ChangeType">الإجراء</text>
+		<text name="ManagementStatement">تقرير الإدارة</text>
+		<text name="User">المستخدم</text>
+		<text name="Customer">الزبون</text>
+		<text name="Customers">الزبائن</text>
+		<text name="Action">العمليات</text>
+		<text name="Close">إغلاق</text>
+
+	</texts>
 </localizationDictionary>

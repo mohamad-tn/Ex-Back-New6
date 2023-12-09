@@ -97,6 +97,9 @@ namespace Bwr.Exchange.Authorization
 
             //BranchTransfersCounter
             context.CreatePermission(PermissionNames.Pages_BranchTransfersCounter, L("BranchTransfersCounter"));
+
+            //ManagementStatement
+            context.CreatePermission(PermissionNames.Pages_ManagementStatement, L("ManagementStatement"));
         }
 
         private static ILocalizableString L(string name)

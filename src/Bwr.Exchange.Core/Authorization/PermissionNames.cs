@@ -93,5 +93,9 @@
 
         //BranchTransfersCounter
         public const string Pages_BranchTransfersCounter = "Pages.BranchTransfersCounter";
+
+        //ManagementStatement
+        public const string Pages_ManagementStatement = "Pages.ManagementStatement";
+
     }
 }

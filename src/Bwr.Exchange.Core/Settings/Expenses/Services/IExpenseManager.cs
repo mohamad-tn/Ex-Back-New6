@@ -15,5 +15,6 @@ namespace Bwr.Exchange.Settings.Expenses.Services
         Task DeleteAsync(int id);
         bool CheckIfNameAlreadyExist(string name,int branchId);
         bool CheckIfNameAlreadyExist(int id, string name, int branchId);
+        string GetExpenseNameById(int id);
     }
 }

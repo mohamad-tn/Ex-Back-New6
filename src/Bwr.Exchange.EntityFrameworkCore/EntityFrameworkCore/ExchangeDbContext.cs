@@ -26,6 +26,7 @@ using Bwr.Exchange.ExchangeCurrencies;
 using Bwr.Exchange.CashFlows.CashFlowMatchings;
 using Bwr.Exchange.Settings.GeneralSettings;
 using Bwr.Exchange.Settings.Branches;
+using Bwr.Exchange.CashFlows.ManagementStatement;
 
 namespace Bwr.Exchange.EntityFrameworkCore
 {
@@ -74,5 +75,6 @@ namespace Bwr.Exchange.EntityFrameworkCore
         public virtual DbSet<GeneralSetting> GeneralSettings { get; set; }
         public virtual DbSet<ExchangeCurrencyHistory> ExchangeCurrencyHistories { get; set; }
         public virtual DbSet<Branch> Branches { get; set; }
+        public virtual DbSet<Management> ManagementStatement { get; set; }
     }
 }

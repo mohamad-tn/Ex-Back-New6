@@ -64,6 +64,12 @@ namespace Bwr.Exchange.Settings.ExchangePrices
             return exchangePrices;
         }
 
+        public async Task<ExchangePriceDto> GetById(int id)
+        {
+            var exPrice = await _exchangeManager.GetByCurrencyIdAsync(id);
+            return ObjectMapper.Map<ExchangePriceDto>(exPrice);
+        }
+
         public async Task<ExchangePriceDto> UpdateAsync(UpdateExchangePriceDto input)
         {
             var exchangePrice = await _exchangeManager.GetByCurrencyIdAsync(input.CurrencyId);

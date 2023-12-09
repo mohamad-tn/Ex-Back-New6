@@ -78,7 +78,7 @@ namespace Bwr.Exchange.ExchangeCurrencies.Services.Implements
                         Commission = 0.0,
                         InstrumentNo = null,
                         CompanyCommission = 0.0,
-                        Note = "عن مبلغ " + result.AmoutOfSecondCurrency + secondCurrencyName,
+                        Note = " عن مبلغ " + string.Format("{0:n}", result.AmoutOfSecondCurrency) + " " + secondCurrencyName,
                         Beneficiary = "",
                         Sender = "",
                         Destination = ""
@@ -97,7 +97,7 @@ namespace Bwr.Exchange.ExchangeCurrencies.Services.Implements
                         Commission = 0.0,
                         InstrumentNo = null,
                         CompanyCommission = 0.0,
-                        Note = "عن مبلغ " + result.AmountOfFirstCurrency + firstCurrencyName,
+                        Note = " عن مبلغ " + string.Format("{0:n}", result.AmountOfFirstCurrency) + " " + firstCurrencyName,
                         Beneficiary = "",
                         Sender = "",
                         Destination = ""
@@ -145,7 +145,7 @@ namespace Bwr.Exchange.ExchangeCurrencies.Services.Implements
                         Commission = 0.0,
                         InstrumentNo = null,
                         CompanyCommission = 0.0,
-                        Note = "عن مبلغ " + result.AmoutOfSecondCurrency + secondCurrencyName,
+                        Note = " عن مبلغ " + string.Format("{0:n}", result.AmoutOfSecondCurrency) + " " + secondCurrencyName,
                         Beneficiary = "",
                         Sender = "",
                         Destination = ""
@@ -164,7 +164,7 @@ namespace Bwr.Exchange.ExchangeCurrencies.Services.Implements
                         Commission = 0.0,
                         InstrumentNo = null,
                         CompanyCommission = 0.0,
-                        Note = "عن مبلغ " + result.AmountOfFirstCurrency + firstCurrencyName,
+                        Note = " عن مبلغ " + string.Format("{0:n}", result.AmountOfFirstCurrency) + " " + firstCurrencyName,
                         Beneficiary = "",
                         Sender = "",
                         Destination = ""
