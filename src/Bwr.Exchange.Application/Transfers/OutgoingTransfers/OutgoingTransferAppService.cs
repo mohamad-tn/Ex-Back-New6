@@ -98,6 +98,8 @@ namespace Bwr.Exchange.Transfers.OutgoingTransfers
 
         public async Task<OutgoingTransferDto> UpdateAsync(OutgoingTransferDto input)
         {
+            var branch = await GetCurrentBranch();
+
             var outgoingTransfer = await _outgoingTransferManager.GetByIdAsync(input.Id);
             if (outgoingTransfer.ToBranchId != null &&
                 outgoingTransfer.Status == OutgoingTransferStatus.Accepted)
@@ -114,12 +116,6 @@ namespace Bwr.Exchange.Transfers.OutgoingTransfers
                 {
                     before = L("Note") + " : " + outgoingTransfer.Note;
                     after = L("Note") + " : " + input.Note;
-                }
-
-                if (outgoingTransfer.Number != input.Number)
-                {
-                    before = before + " - " + L("Number") + " : " + outgoingTransfer.Number;
-                    after = after + " - " + L("Number") + " : " + input.Number;
                 }
 
                 if (outgoingTransfer.CurrencyId != input.CurrencyId)
@@ -160,8 +156,8 @@ namespace Bwr.Exchange.Transfers.OutgoingTransfers
 
                 if ((int)outgoingTransfer.PaymentType != input.PaymentType)
                 {
-                    before = before + " - " + L("PaymentType") + " : " + ((PaymentType)outgoingTransfer.PaymentType);
-                    after = after + " - " + L("PaymentType") + " : " + ((PaymentType)input.PaymentType);
+                    before = before + " - " + L("PaymentType") + " : " + L(((PaymentType)outgoingTransfer.PaymentType).ToString());
+                    after = after + " - " + L("PaymentType") + " : " + L(((PaymentType)input.PaymentType).ToString());
                 }
 
                 if (outgoingTransfer.FromClientId != input.FromClientId)
@@ -196,7 +192,7 @@ namespace Bwr.Exchange.Transfers.OutgoingTransfers
                         DateTime.Now, 0, outgoingTransfer.Number, null, null, before, after, null, null, null, null,
                         null, null, outgoingTransfer.Commission, null, null, outgoingTransfer.CurrencyId,
                         outgoingTransfer.FromClientId, AbpSession.GetUserId(), outgoingTransfer.FromCompanyId
-                        , outgoingTransfer.SenderId, outgoingTransfer.BeneficiaryId, outgoingTransfer.ToCompanyId, null
+                        , outgoingTransfer.SenderId, outgoingTransfer.BeneficiaryId, outgoingTransfer.ToCompanyId, null,branch.Id
                         )
                     );
 
@@ -237,6 +233,8 @@ namespace Bwr.Exchange.Transfers.OutgoingTransfers
 
         public async Task DeleteAsync(int id)
         {
+            var branch = await GetCurrentBranch();
+
             var outgoingTransfer = await _outgoingTransferManager.GetByIdAsync(id);
             if(outgoingTransfer != null)
             {
@@ -248,7 +246,7 @@ namespace Bwr.Exchange.Transfers.OutgoingTransfers
                     DateTime.Now, 1, outgoingTransfer.Number, null, null, null, null, null, null, null, null,
                     null, null, outgoingTransfer.Commission, null, null, outgoingTransfer.CurrencyId,
                     outgoingTransfer.FromClientId, AbpSession.GetUserId(), outgoingTransfer.FromCompanyId
-                    , outgoingTransfer.SenderId, outgoingTransfer.BeneficiaryId, outgoingTransfer.ToCompanyId, null
+                    , outgoingTransfer.SenderId, outgoingTransfer.BeneficiaryId, outgoingTransfer.ToCompanyId, null,branch.Id
                     )
                 );
             }

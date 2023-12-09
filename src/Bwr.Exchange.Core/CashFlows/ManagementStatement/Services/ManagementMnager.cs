@@ -43,11 +43,11 @@ namespace Bwr.Exchange.CashFlows.ManagementStatement.Services
             return createdManagement;
         }
 
-        public IList<Management> Get(Dictionary<string, object> dic, int type)
+        public IList<Management> Get(Dictionary<string, object> dic, int type,int? branchId)
         {
             IEnumerable<Management> managements = _managementRepository.GetAllIncluding(
                 c=>c.Currency,cl=>cl.Client,s=>s.Sender,b=>b.Beneficiary,fc=>fc.FirstCurrency,
-                sc=>sc.SecondCurrency,co=>co.Company,tc=>tc.ToCompany);
+                sc=>sc.SecondCurrency,co=>co.Company,tc=>tc.ToCompany,u=>u.User);
 
             if (managements != null && managements.Any())
             {
@@ -63,12 +63,17 @@ namespace Bwr.Exchange.CashFlows.ManagementStatement.Services
                     managements = managements.Where(x => ((int)x.Type) == type);
                 }
 
+                if (branchId != null)
+                {
+                    managements = managements.Where(x => x.BranchId == branchId);
+                }
+
                 return managements.ToList();
             }
             return new List<Management>();
         }
 
-        public async Task<Dictionary<int, double>> getChangesCount()
+        public async Task<Dictionary<int, double>> getChangesCount(int branchId)
         {
             Dictionary<int, double> changes = new Dictionary<int, double>();
             double OutgoingTransfersCount = 0;
@@ -81,9 +86,10 @@ namespace Bwr.Exchange.CashFlows.ManagementStatement.Services
             changes.Add(2, TreasuryCount);
             changes.Add(3, ExchangeCount);
 
-            var allChanges = await _managementRepository.GetAllListAsync();
+            var allRecords = await _managementRepository.GetAllListAsync();
+            var recordsForCurrentBranch = allRecords.Where(x => x.BranchId == branchId);
 
-            foreach (var change in allChanges)
+            foreach (var change in recordsForCurrentBranch)
             {
                 if (change.Type == ManagementItemType.OutgoingTransfer)
                 {

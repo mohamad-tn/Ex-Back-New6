@@ -47,6 +47,7 @@ namespace Bwr.Exchange.CashFlows.ManagementStatement.Events
             management.BeneficiaryId = eventData.BeneficiaryId;
             management.ToCompanyId = eventData.ToCompanyId;
             management.ActionType = (ExchangeCurrencies.ActionType?)eventData.ActionType;
+            management.BranchId = eventData.BranchId;
             #endregion
 
             await _managementMnager.CreateAsync(management);

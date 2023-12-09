@@ -54,7 +54,7 @@ namespace Bwr.Exchange.ExchangeCurrencies
 
         public async Task<UpdateExchangeCurrencyDto> UpdateAsync(UpdateExchangeCurrencyDto input)
         {
-            await GetCurrentBranch();
+            var branch = await GetCurrentBranch();
             var exchangeCurrency = await _exchangeCurrencyManager.GetByIdAsync(input.Id);
 
             string before = "";
@@ -166,7 +166,7 @@ namespace Bwr.Exchange.ExchangeCurrencies
                     exchangeCurrency.ReceivedAmountOfFirstCurrency, exchangeCurrency.PaidAmountOfSecondCurrency,
                     exchangeCurrency.ReceivedAmountOfSecondCurrency, exchangeCurrency.Commission,
                     exchangeCurrency.FirstCurrencyId, exchangeCurrency.SecondCurrencyId, null, exchangeCurrency.ClientId,
-                    AbpSession.GetUserId(), exchangeCurrency.CompanyId, null, null, null, (int?)exchangeCurrency.ActionType
+                    AbpSession.GetUserId(), exchangeCurrency.CompanyId, null, null, null, (int?)exchangeCurrency.ActionType,branch.Id
                     )
                 );
 
@@ -288,6 +288,8 @@ namespace Bwr.Exchange.ExchangeCurrencies
 
         public async Task DeleteAsync(int id)
         {
+            var branch = await GetCurrentBranch();
+
             var exchangeCurrency = await _exchangeCurrencyManager.GetByIdAsync(id);
             if (exchangeCurrency != null)
             {
@@ -301,7 +303,7 @@ namespace Bwr.Exchange.ExchangeCurrencies
                     exchangeCurrency.ReceivedAmountOfFirstCurrency, exchangeCurrency.PaidAmountOfSecondCurrency,
                     exchangeCurrency.ReceivedAmountOfSecondCurrency, exchangeCurrency.Commission,
                     exchangeCurrency.FirstCurrencyId, exchangeCurrency.SecondCurrencyId, null, exchangeCurrency.ClientId,
-                    AbpSession.GetUserId(), exchangeCurrency.CompanyId, null, null, null, (int?)exchangeCurrency.ActionType
+                    AbpSession.GetUserId(), exchangeCurrency.CompanyId, null, null, null, (int?)exchangeCurrency.ActionType,branch.Id
                     )
                 );
             }

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Collections;
 using Abp.Runtime.Session;
+using Abp.Threading;
 
 namespace Bwr.Exchange.CashFlows.ManagementStatement.Services
 {
@@ -24,6 +25,9 @@ namespace Bwr.Exchange.CashFlows.ManagementStatement.Services
 
         public async Task<ManagementDto> CreateAsync(CreateManagementDto input)
         {
+            var currentBranch = await GetCurrentBranch();
+            input.BranchId = currentBranch.Id;
+
             var management = ObjectMapper.Map<Management>(input);
             management.UserId = AbpSession.GetUserId();
 
@@ -33,14 +37,18 @@ namespace Bwr.Exchange.CashFlows.ManagementStatement.Services
 
         public async Task<Dictionary<int,double>> GetChangesCount()
         {
-            var changes = await _managementManager.getChangesCount();
+            var branch = await GetCurrentBranch();
+
+            var changes = await _managementManager.getChangesCount(branch.Id);
             return changes;
         }
 
         [HttpPost]
-        public ReadGrudDto GetForGrid([FromBody] BwireDataManagerRequest dm)
+        public ReadGrudDto GetForGrid([FromBody] ManagementDataManagerRequest dm)
         {
+            var user = UserManager.GetUserById(dm.userId);
             var input = new SearchManagementDto();
+            IList<Management> managements = new List<Management>();
 
             DateTime fromDate = new DateTime(), toDate = new DateTime();
 
@@ -60,10 +68,28 @@ namespace Bwr.Exchange.CashFlows.ManagementStatement.Services
 
 
             var dic = input.ToDictionary();
-            var managements = _managementManager.Get(dic,dm.type);
+
+            if(user.BranchId != null)
+            {
+                managements = _managementManager.Get(dic, dm.type, (int)user.BranchId);
+            }
+            else
+            {
+                managements = _managementManager.Get(dic, dm.type, null);
+            }
 
             IEnumerable<ManagementDto> data = ObjectMapper.Map<List<ManagementDto>>(managements);
             var operations = new DataOperations();
+
+            //if (dm.Where != null && dm.Where.Count > 0)
+            //{
+            //    data = operations.PerformFiltering(data, dm.Where, "and");
+            //}
+
+            if (dm.Sorted != null && dm.Sorted.Count > 0)
+            {
+                data = operations.PerformSorting(data, dm.Sorted);
+            }
 
             IEnumerable groupDs = new List<ReadOutgoingTransferDto>();
             if (dm.Group != null)

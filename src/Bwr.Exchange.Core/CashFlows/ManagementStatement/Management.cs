@@ -92,5 +92,9 @@ namespace Bwr.Exchange.CashFlows.ManagementStatement
         public int? BeneficiaryId { get; set; }
         #endregion
 
+        #region Branch
+        public int BranchId { get; set; }
+        #endregion
+
     }
 }

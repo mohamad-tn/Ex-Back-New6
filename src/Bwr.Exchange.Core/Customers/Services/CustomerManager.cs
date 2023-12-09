@@ -82,6 +82,18 @@ namespace Bwr.Exchange.Customers.Services
             return customer.Name;
         }
 
+        public async Task<Customer> GetCustomerWithImages(int id)
+        {
+            var customer = await _customerRepository.GetAsync(id);
 
+            if (customer != null)
+            {
+                await _customerRepository.EnsureCollectionLoadedAsync(customer, x => x.Images);
+            }
+
+            return customer;
+
+
+        }
     }
 }

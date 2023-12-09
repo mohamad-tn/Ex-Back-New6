@@ -47,6 +47,19 @@ namespace Bwr.Exchange.Customers
             return images.ToList();
         }
 
+        public async Task<CustomerWithImagesDto> GetCustomerWithImagesAsync(int id)
+        {
+            var customer = await _customerManager.GetCustomerWithImages(id);
+
+            var customerDto = ObjectMapper.Map<CustomerWithImagesDto>(customer);
+
+            var images = await GetCustomerImagesAsync(customer.Id);
+
+            customerDto.Images = images;
+
+            return customerDto;
+        }
+
         public IList<CustomerDto> GetTreasuryActionBeneficiaries()
         {
             return new List<CustomerDto>();

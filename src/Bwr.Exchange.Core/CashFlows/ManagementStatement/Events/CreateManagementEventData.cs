@@ -15,7 +15,7 @@ namespace Bwr.Exchange.CashFlows.ManagementStatement.Events
             double? receivedAmountOfFirstCurrency, double? paidAmountOfSecondCurrency,
             double? receivedAmountOfSecondCurrency, double? commission, int? firstCurrencyId,
             int? secondCurrencyId, int? currencyId, int? clientId, long userId, int? companyId,
-            int? senderId, int? beneficiaryId, int? toCompanyId, int? actionType)
+            int? senderId, int? beneficiaryId, int? toCompanyId, int? actionType, int branchId)
         {
             Type = type;
             Amount = amount;
@@ -45,6 +45,7 @@ namespace Bwr.Exchange.CashFlows.ManagementStatement.Events
             BeneficiaryId = beneficiaryId;
             ToCompanyId = toCompanyId;
             ActionType = actionType;
+            BranchId = branchId;
         }
 
         public int Type { get; set; }
@@ -75,5 +76,6 @@ namespace Bwr.Exchange.CashFlows.ManagementStatement.Events
         public int? ToCompanyId { get; set; }
         public int? SenderId { get; set; }
         public int? BeneficiaryId { get; set; }
+        public int BranchId { get; set; }
     }
 }

@@ -33,6 +33,7 @@ namespace Bwr.Exchange.CashFlows.ManagementStatement.Dto
         public int? ToCompanyId { get; set; }
         public int? SenderId { get; set; }
         public int? BeneficiaryId { get; set; }
+        public int BranchId { get; set; }
 
     }
 }

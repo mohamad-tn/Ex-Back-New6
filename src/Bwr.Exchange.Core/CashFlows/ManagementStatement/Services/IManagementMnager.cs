@@ -8,7 +8,7 @@ namespace Bwr.Exchange.CashFlows.ManagementStatement.Services
     public interface IManagementMnager : IDomainService
     {
         Task<Management> CreateAsync(Management input);
-        Task<Dictionary<int,double>> getChangesCount();
-        IList<Management> Get(Dictionary<string, object> dic, int type);
+        Task<Dictionary<int,double>> getChangesCount(int branchId);
+        IList<Management> Get(Dictionary<string, object> dic, int type, int? branchId);
     }
 }

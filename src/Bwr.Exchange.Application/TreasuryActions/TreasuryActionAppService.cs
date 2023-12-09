@@ -210,7 +210,8 @@ namespace Bwr.Exchange.TreasuryActions
 
         public async Task<TreasuryActionDto> UpdateAsync(TreasuryActionDto input)
         {
-            await GetCurrentBranch();
+            var branch = await GetCurrentBranch();
+
             var treasuryAction = await _treasuryActionManager.GetByIdAsync(input.Id);
 
             string before = "";
@@ -221,12 +222,6 @@ namespace Bwr.Exchange.TreasuryActions
             {
                 before = L("Note") + " : " + treasuryAction.Note;
                 after = L("Note") + " : " + input.Note;
-            }
-
-            if (treasuryAction.Number != input.Number)
-            {
-                before = before + " - " + L("Number") + " : " + treasuryAction.Number;
-                after = after + " - " + L("Number") + " : " + input.Number;
             }
 
             if (treasuryAction.CurrencyId != input.CurrencyId)
@@ -285,8 +280,8 @@ namespace Bwr.Exchange.TreasuryActions
 
             if ((int)treasuryAction.ActionType != input.ActionType)
             {
-                before = before + " - " + L("PaymentType") + " : " + ((PaymentType)treasuryAction.ActionType);
-                after = after + " - " + L("PaymentType") + " : " + ((PaymentType)input.ActionType);
+                before = before + " - " + L("PaymentType") + " : " + L(((PaymentType)treasuryAction.ActionType).ToString());
+                after = after + " - " + L("PaymentType") + " : " + L(((PaymentType)input.ActionType).ToString());
             }
             #endregion
 
@@ -295,7 +290,7 @@ namespace Bwr.Exchange.TreasuryActions
                 2, treasuryAction.Amount, treasuryAction.Date, null, DateTime.Now, 0, treasuryAction.Number,
                 (int?)treasuryAction.ActionType, treasuryAction.MainAccount.ToString(), before, after, null, null, null, null, null,
                 null, null, null, null, treasuryAction.CurrencyId, treasuryAction.MainAccountClientId, AbpSession.GetUserId(),
-                treasuryAction.MainAccountCompanyId, null, null, treasuryAction.ExchangePartyCompanyId, null
+                treasuryAction.MainAccountCompanyId, null, null, treasuryAction.ExchangePartyCompanyId, null,branch.Id
                 )
             );
 
@@ -326,6 +321,8 @@ namespace Bwr.Exchange.TreasuryActions
 
         public async Task DeleteAsync(int id)
         {
+            var branch = await GetCurrentBranch();
+
             var treasuryAction = await _treasuryActionManager.GetByIdAsync(id);
             if (treasuryAction != null)
             {
@@ -336,7 +333,7 @@ namespace Bwr.Exchange.TreasuryActions
                     2, treasuryAction.Amount, treasuryAction.Date, null, DateTime.Now, 1, treasuryAction.Number,
                     (int?)treasuryAction.ActionType, treasuryAction.MainAccount.ToString(), null, null, null, null, null, null, null,
                     null, null, null, null, treasuryAction.CurrencyId, treasuryAction.MainAccountClientId, AbpSession.GetUserId(),
-                    treasuryAction.MainAccountCompanyId, null, null, treasuryAction.ExchangePartyCompanyId, null
+                    treasuryAction.MainAccountCompanyId, null, null, treasuryAction.ExchangePartyCompanyId, null,branch.Id
                     )
                 );
             }

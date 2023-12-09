@@ -11,6 +11,6 @@ namespace Bwr.Exchange.CashFlows.ManagementStatement.Services
     {
         Task<ManagementDto> CreateAsync(CreateManagementDto input);
         Task<Dictionary<int, double>> GetChangesCount();
-        ReadGrudDto GetForGrid([FromBody] BwireDataManagerRequest dm);
+        ReadGrudDto GetForGrid([FromBody] ManagementDataManagerRequest dm);
     }
 }

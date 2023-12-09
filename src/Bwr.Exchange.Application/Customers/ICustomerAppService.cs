@@ -12,5 +12,6 @@ namespace Bwr.Exchange.Customers
         Task<IList<CustomerDto>> GetAllAsync();
         Task<IList<FileUploadDto>> GetCustomerImagesAsync(int customerId);
         Task<CustomerDto> GetByNameAsync(string name);
+        Task<CustomerWithImagesDto> GetCustomerWithImagesAsync(int id);
     }
 }
