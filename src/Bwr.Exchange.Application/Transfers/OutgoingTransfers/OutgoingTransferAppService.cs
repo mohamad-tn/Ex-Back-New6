@@ -388,7 +388,8 @@ namespace Bwr.Exchange.Transfers.OutgoingTransfers
 
         public int GetLastNumber()
         {
-            return _outgoingTransferManager.GetLastNumber();
+            var currentBranch = AsyncHelper.RunSync(GetCurrentBranch);
+            return _outgoingTransferManager.GetLastNumber(currentBranch.Id);
         }
 
         public async Task<IList<ReadOutgoingTransferDto>> GetAllNotCompleted()
