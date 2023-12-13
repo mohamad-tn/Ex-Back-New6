@@ -323,9 +323,9 @@ namespace Bwr.Exchange.Transfers.OutgoingTransfers.Services
              
         }
 
-        public int GetLastNumber()
+        public int GetLastNumber(int branchId)
         {
-            var last = _outgoingTransferRepository.GetAll().OrderByDescending(x => x.Number).FirstOrDefault();
+            var last = _outgoingTransferRepository.GetAll().Where(x=>x.FromBranchId == branchId).OrderByDescending(x => x.Number).FirstOrDefault();
             return last == null ? 0 : last.Number;
         }
 

@@ -15,7 +15,7 @@ namespace Bwr.Exchange.Transfers.OutgoingTransfers.Services
         Task<IList<OutgoingTransfer>> GetAsync(Dictionary<string, object> dic);
         IList<OutgoingTransfer> Get(Dictionary<string, object> dic);
         OutgoingTransfer GetById(int id);
-        int GetLastNumber();
+        int GetLastNumber(int branchId);
         IList<OutgoingTransfer> GetAllNotCompleted(int? branchId);
         Task<OutgoingTransfer> AcceptOutgoingTransferFromBranchAsync(int outgoingTransferId, int branchId);
         Task<OutgoingTransfer> RejectOutgoingTransferFromBranchAsync(int outgoingTransferId);
